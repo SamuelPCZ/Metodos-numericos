@@ -14,4 +14,4 @@ El método de bisección es un algoritmo para encontrar raíces de funciones con
 4. **Actualización del intervalo**: Dependiendo del signo de `f(c)`, el intervalo se reduce a `[a, c]` o `[c, b]`.
 5. **Repetición**: El proceso se repite hasta que se cumple un criterio de parada (como una tolerancia o un número máximo de iteraciones).
 
-El código para hallar una raíz esta hecho en python y se encuentra en este repositorio con nombre "MetodoBiseccion".
+El código para hallar una raíz con este método esta hecho en python y se encuentra en este repositorio con nombre "MetodoBiseccion".
