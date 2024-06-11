@@ -27,50 +27,22 @@ El Método de la Secante es un algoritmo numérico utilizado para encontrar apro
 
 ## Cómo Funciona
 
-1. **Definición del Intervalo Inicial**: Seleccionamos dos puntos iniciales \( x_0 \) y \( x_1 \) en el dominio de la función \( f(x) \). Estos dos puntos iniciales deben estar lo más cerca posible de la raíz que queremos encontrar.
+## Cómo Funciona el Método de la Secante
 
-2. **Cálculo de la Pendiente Aproximada**: Utilizamos la diferencia finita para aproximar la pendiente de la recta secante que pasa por los puntos \( (x_0, f(x_0)) \) y \( (x_1, f(x_1)) \). La pendiente aproximada se calcula como:
-   \[
-   m \approx \frac{{f(x_1) - f(x_0)}}{{x_1 - x_0}}
-   \]
+1. **Definición del Intervalo Inicial:** Se seleccionan dos puntos iniciales `x0 y x1` en el dominio de la función `f(x)`. Estos puntos iniciales deben estar lo más cerca posible de la raíz que se desea encontrar.
 
-3. **Cálculo del Punto Intermedio**: Usamos la ecuación de la recta para encontrar el valor de \( x_2 \) donde la recta secante cruza el eje \( x \):
-   \[
-   x_2 = x_1 - \frac{{f(x_1) \cdot (x_1 - x_0)}}{{f(x_1) - f(x_0)}}
-   \]
+2. **Cálculo de la Pendiente Aproximada:** Utilizando la diferencia finita, se aproxima la pendiente de la recta secante que pasa por los puntos `(x0, f(x0))` y `(x1, f(x1))`. La pendiente aproximada se calcula como:
 
-4. **Iteración**: Actualizamos los puntos \( x_0 \) y \( x_1 \) con \( x_1 \) y \( x_2 \), respectivamente, y repetimos el proceso hasta que se alcance la convergencia deseada o se cumpla un criterio de parada predefinido.
+   `m ≈ (f(x1) - f(x0)) / (x1 - x0)`
 
-## Uso
+3. **Cálculo del Punto Intermedio:** Se utiliza la ecuación de la recta para encontrar el valor de x2, donde la recta secante cruza el eje x:
 
-Aquí hay un ejemplo de cómo utilizar el script del Método de la Secante:
+   `x2 = x1 - (f(x1) * (x1 - x0)) / (f(x1) - f(x0))`
 
-```python
+4. **Iteración:** Se actualizan los puntos `x0` y `x1` con `x1` y `x2`, respectivamente. Este proceso se repite hasta alcanzar la convergencia deseada o cumplir un criterio de parada predefinido.
 
-# Definir la función
-def f(x):
-    return x**3 - 2*x - 5
+Este enfoque ofrece una comprensión paso a paso del método, mostrando cómo se seleccionan los puntos iniciales, se calcula la pendiente aproximada, se encuentra el punto intermedio y se repite el proceso hasta encontrar una aproximación satisfactoria de la raíz.
 
-# Definir los puntos iniciales
-x0 = 1
-x1 = 2
-
-# Llamar al Método de la Secante
-raiz = secante(f, x0, x1)
-
-print(f"La raíz aproximada es: {raiz}")
-
-def secante(f, x0, x1, tol=1e-6, max_iter=100):
-    iteracion = 0
-    while iteracion < max_iter:
-        x2 = x1 - (f(x1) * (x1 - x0)) / (f(x1) - f(x0))
-        if abs(x2 - x1) < tol:
-            return x2
-        x0 = x1
-        x1 = x2
-        iteracion += 1
-    return None
-```
 ---
 
 ¡Gracias por visitar este repositorio!
