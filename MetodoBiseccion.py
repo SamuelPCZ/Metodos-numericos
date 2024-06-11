@@ -34,7 +34,7 @@ while (error_ >= tolerancia):
     xn = puntoMedio(a, b)
     fxn = funcion(xn)
     Xtotal.append(xn)
-    Itotal.append(i)
+
 
     if (i == 0):
         Error_.append(100)
@@ -55,7 +55,7 @@ while (error_ >= tolerancia):
 
     i += 1
 
-# Imprimir los resultados
+# For creado para imprimir los resultados
 for j in range(len(Xtotal)):
     print(f"Iteración {j}: Xn = {Xtotal[j]}, Error = {Error_[j]}%")
 
